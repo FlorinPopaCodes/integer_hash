@@ -1,5 +1,10 @@
 # IntegerHash
 
+[![Build Status](https://travis-ci.org/icehero/integer_hash.svg?branch=master)](https://travis-ci.org/icehero/integer_hash)
+[![Code Climate](https://codeclimate.com/github/icehero/integer_hash/badges/gpa.svg)](https://codeclimate.com/github/icehero/integer_hash)
+[![Test Coverage](https://codeclimate.com/github/icehero/integer_hash/badges/coverage.svg)](https://codeclimate.com/github/icehero/integer_hash/coverage)
+
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/integer_hash`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
