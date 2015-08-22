@@ -1,0 +1,9 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - 2.2.3
+
+script: 'bundle exec rake'
+
+before_install: gem install bundler -v 1.10.6
