@@ -2,10 +2,9 @@ language: ruby
 cache: bundler
 
 rvm:
-  - head
-  - 2.2.0
-  - 2.1.0
-  - 2.0.0
+  - 2.2.3
+  - 2.1.7
+  - 2.0.0-p647
   - 1.9.3-p551
   - jruby-9.0.0.0
 

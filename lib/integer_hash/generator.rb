@@ -12,7 +12,7 @@ module IntegerHash
     end
 
     def generate_configuration
-      @prime ||=  generate_prime
+      @prime ||= generate_prime
       inverse_integer = generate_inverse
       random_integer = generate_random
 
@@ -24,7 +24,7 @@ module IntegerHash
     end
 
     def generate_inverse
-      OpenSSL::BN.new(@prime).mod_inverse(2**@size)
+      OpenSSL::BN.new(@prime.to_s).mod_inverse(2**@size)
     end
 
     def generate_random
