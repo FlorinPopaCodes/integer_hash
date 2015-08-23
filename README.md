@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/icehero/integer_hash/badges/gpa.svg)](https://codeclimate.com/github/icehero/integer_hash)
 [![Test Coverage](https://codeclimate.com/github/icehero/integer_hash/badges/coverage.svg)](https://codeclimate.com/github/icehero/integer_hash/coverage)
 
-A small rugy gem that implements Knuth's multiplication hashing algorithm with the following properties: fast, reversable and zero collisions.
+A small Ruby gem that implements Knuth's multiplication hashing algorithm with the following properties: fast, reversable and zero collisions.
 
 This is a port from PHP of the [jenssegers/optimus](https://github.com/jenssegers/optimus) package.
 
@@ -27,24 +27,28 @@ Or install it yourself as:
 
 ## Configure
 
-Override any of these defaults in `config/initializers/clearance.rb`:
+Write the defaults taken from `IntegerHash::Generator.generate_configuration` in `config/initializers/integer_hash.rb`:
 
 ```ruby
 IntegerHash.configure do |config|
-  config.prime = 1
-  config.inverse_prime = 1
-  config.random_prime = 1
+  config.prime =
+  config.inverse_integer =
+  config.random_integer =
 end
 ```
 
 ## Usage
 
-
-
-TODO: Write usage instructions here
+```ruby
+$ IntegerHash.encode(42)
+=> 1591777047
+$ IntegerHash.decode(1591777047)
+=> 42
+```
 
 ## Alternatives
 
+There are only two alternatives to this gem written in Ruby. ['hashids'](https://github.com/peterhellberg/hashids.rb) gem and ['obfuscate_id'](https://github.com/namick/obfuscate_id) gem which both offer the same main feature: encoding integers so that you don't expose database ids to the user.
 
 
 ## Development
