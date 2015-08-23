@@ -4,10 +4,13 @@ describe IntegerHash do
   before do
     IntegerHash.configure do |config|
       config.prime = 1580030173
-      config.inverse_prime = 59260789
-      config.random_prime = 1163945558
-      config.max_integer = 2**31-1
+      config.inverse_integer = 59260789
+      config.random_integer = 1163945558
     end
+  end
+
+  after do
+    IntegerHash.configuration = IntegerHash::Configuration.new
   end
 
   it 'has a version number' do
@@ -20,8 +23,8 @@ describe IntegerHash do
 
   it 'delegates attributes to configuration' do
     expect(IntegerHash.prime).to eq(1580030173)
-    expect(IntegerHash.inverse_prime).to eq(59260789)
-    expect(IntegerHash.random_prime).to eq(1163945558)
+    expect(IntegerHash.inverse_integer).to eq(59260789)
+    expect(IntegerHash.random_integer).to eq(1163945558)
     expect(IntegerHash.max_integer).to eq(2**31-1)
   end
 end

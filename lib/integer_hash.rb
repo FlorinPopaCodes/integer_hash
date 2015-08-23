@@ -3,11 +3,11 @@ require "integer_hash/configuration"
 
 module IntegerHash
   def self.encode(value)
-    ((value * prime) & max_integer) ^ random_prime
+    ((value * prime) & max_integer) ^ random_integer
   end
 
   def self.decode(value)
-    ((value ^ random_prime) * inverse_prime) & max_integer
+    ((value ^ random_integer) * inverse_integer) & max_integer
   end
 
   protected
@@ -16,12 +16,12 @@ module IntegerHash
     configuration.prime
   end
 
-  def self.inverse_prime
-    configuration.inverse_prime
+  def self.inverse_integer
+    configuration.inverse_integer
   end
 
-  def self.random_prime
-    configuration.random_prime
+  def self.random_integer
+    configuration.random_integer
   end
 
   def self.max_integer
