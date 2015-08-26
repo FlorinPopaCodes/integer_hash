@@ -1,5 +1,6 @@
 require "integer_hash/version"
 require "integer_hash/configuration"
+require "integer_hash/rails"
 
 module IntegerHash
   def self.encode(value)
