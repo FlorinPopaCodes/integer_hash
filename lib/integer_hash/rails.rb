@@ -14,8 +14,8 @@ module IntegerHash
 
     module ClassMethods
       def find(*args)
-        scope = args.slice!(0)
-        options = args.slice!(0) || {}
+        options = args.extract_options!
+        scope = args
         if has_encoded_id? && !options[:no_hashed_id]
           if scope.is_a?(Array)
             scope.map! {|a| IntegerHash.decode(a.to_i).to_s}
@@ -23,7 +23,7 @@ module IntegerHash
             scope = IntegerHash.decode(scope.to_i).to_s
           end
         end
-        super(scope)
+        super(*scope)
       end
 
       def has_encoded_id?
@@ -39,17 +39,17 @@ module IntegerHash
       # Override ActiveRecord::Persistence#reload
       # passing in an options flag with { no_hashed_id: true }
       def reload(options = nil)
-        options = (options || {}).merge(no_hashed_id: true)
-
         clear_aggregation_cache
         clear_association_cache
+        self.class.connection.clear_query_cache
 
         fresh_object =
           if options && options[:lock]
-            self.class.unscoped { self.class.lock(options[:lock]).find(id, options) }
+            self.class.unscoped { self.class.lock(options[:lock]).find(id) }
           else
-            self.class.unscoped { self.class.find(id, options) }
+            self.class.unscoped { self.class.find(id, no_hashed_id: true) }
           end
+
 
         @attributes = fresh_object.instance_variable_get('@attributes')
         @new_record = false

@@ -34,6 +34,7 @@ describe IntegerHash::Rails do
     end
 
     @post = Post.create
+    @post2 = Post.create
     @comment = Comment.create
   end
 
@@ -43,8 +44,23 @@ describe IntegerHash::Rails do
     expect(@comment.to_param).to eq "1"
   end
 
-  it 'finds the right models' do
+  it 'finds the right model' do
     expect(Post.find("458047115")).not_to be nil
     expect(Comment.find("1")).not_to be nil
+  end
+
+  it 'finds the right models' do
+    expect(Post.find("458047115", "2033899500")).not_to be nil
+    expect(Comment.find("1")).not_to be nil
+  end
+
+  it 'reloads with the right id' do
+    post = Post.find("2033899500")
+    expect(post.reload).to be post
+  end
+
+  it 'reloads and locks with the right id' do
+    post = Post.find("2033899500")
+    expect(post.reload(lock: true)).to be post
   end
 end
