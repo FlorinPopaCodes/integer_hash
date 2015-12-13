@@ -17,11 +17,7 @@ module IntegerHash
         options = args.extract_options!
         scope = args
         if has_encoded_id? && !options[:no_hashed_id]
-          if scope.is_a?(Array)
-            scope.map! {|a| IntegerHash.decode(a.to_i).to_s}
-          else
-            scope = IntegerHash.decode(scope.to_i).to_s
-          end
+          scope.map! {|a| IntegerHash.decode(a.to_i).to_s}
         end
         super(*scope)
       end
