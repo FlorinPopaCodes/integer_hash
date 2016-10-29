@@ -7,14 +7,12 @@ describe IntegerHash::Rails do
   before do
     ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
 
-    silence_stream(STDOUT) do
-      ActiveRecord::Schema.define do
-        create_table :posts, force: true do |t|
-        end
+    ActiveRecord::Schema.define do
+      create_table :posts, force: true do |t|
+      end
 
-        create_table :comments, force: true do |t|
-          t.integer :post_id
-        end
+      create_table :comments, force: true do |t|
+        t.integer :post_id
       end
     end
 
