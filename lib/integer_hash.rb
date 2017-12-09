@@ -11,8 +11,6 @@ module IntegerHash
     ((value ^ random_integer) * inverse_integer) & max_integer
   end
 
-  protected
-
   def self.prime
     configuration.prime
   end
