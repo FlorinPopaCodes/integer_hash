@@ -1,3 +1,5 @@
+require 'openssl'
+
 module IntegerHash
   class Generator
     def self.generate_configuration(size = 31, prime = nil)
