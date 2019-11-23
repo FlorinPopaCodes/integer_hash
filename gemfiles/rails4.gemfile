@@ -5,3 +5,4 @@ gemspec
 
 gem "sqlite3", '~> 1.4', group: :test, require: false
 gem "simplecov", group: :test, require: false
+gem "activerecord", '~> 4'
