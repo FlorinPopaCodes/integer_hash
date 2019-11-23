@@ -1,8 +1,8 @@
 # IntegerHash
 
-[![Build Status](https://travis-ci.org/icehero/integer_hash.svg?branch=master)](https://travis-ci.org/icehero/integer_hash)
-[![Code Climate](https://codeclimate.com/github/icehero/integer_hash/badges/gpa.svg)](https://codeclimate.com/github/icehero/integer_hash)
-[![Test Coverage](https://codeclimate.com/github/icehero/integer_hash/badges/coverage.svg)](https://codeclimate.com/github/icehero/integer_hash/coverage)
+[![Build Status](https://travis-ci.org/FlorinPopaCodes/integer_hash.svg?branch=master)](https://travis-ci.org/FlorinPopaCodes/integer_hash)
+[![Code Climate](https://codeclimate.com/github/FlorinPopaCodes/integer_hash/badges/gpa.svg)](https://codeclimate.com/github/FlorinPopaCodes/integer_hash)
+[![Test Coverage](https://codeclimate.com/github/FlorinPopaCodes/integer_hash/badges/coverage.svg)](https://codeclimate.com/github/FlorinPopaCodes/integer_hash/coverage)
 
 A small Ruby gem that implements Knuth's multiplication hashing algorithm with the following properties: fast, reversable and zero collisions.
 
@@ -60,10 +60,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/icehero/integer_hash.
+Bug reports and pull requests are welcome on GitHub at https://github.com/FlorinPopaCodes/integer_hash.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
