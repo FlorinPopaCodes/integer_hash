@@ -7,7 +7,6 @@ gemfile:
   - gemfiles/rails6.gemfile
 
 rvm:
-  - 2.4
   - 2.5
   - 2.6
 
