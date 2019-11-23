@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["pp.flrn@gmail.com"]
 
   spec.summary       = %q{Integer hashing based on Knuth's multiplicative hashing algorithm.}
-  spec.homepage      = "https://github.com/icehero/integer_hash"
+  spec.homepage      = "https://github.com/FlorinPopaCodes/integer_hash"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
