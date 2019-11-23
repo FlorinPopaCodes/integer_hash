@@ -35,8 +35,6 @@ module IntegerHash
       # Override ActiveRecord::Persistence#reload
       # passing in an options flag with { no_hashed_id: true }
       def reload(options = nil)
-        clear_aggregation_cache
-        clear_association_cache
         self.class.connection.clear_query_cache
 
         fresh_object =
@@ -46,8 +44,7 @@ module IntegerHash
             self.class.unscoped { self.class.find(id, no_hashed_id: true) }
           end
 
-
-        @attributes = fresh_object.instance_variable_get('@attributes')
+        @attributes = fresh_object.instance_variable_get(:@attributes)
         @new_record = false
         self
       end
